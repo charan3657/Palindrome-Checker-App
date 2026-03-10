@@ -42,7 +42,7 @@ class DequeStrategy implements PalindromeStrategy {
     }
 }
 
-// Context class to inject strategy
+// Context class for strategy injection
 class PalindromeContext {
     private PalindromeStrategy strategy;
 
@@ -61,6 +61,7 @@ class PalindromeContext {
 
 // Main class
 public class UseCase3PalindromeCheckerApp {
+
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -86,7 +87,7 @@ public class UseCase3PalindromeCheckerApp {
             strategy = new StackStrategy();
         }
 
-        // Inject strategy
+        // Inject strategy into context
         PalindromeContext context = new PalindromeContext(strategy);
 
         if (context.executeStrategy(input)) {
